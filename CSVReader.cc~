@@ -28,10 +28,17 @@ int main(int argc, char* argv[])
 	string line = "fail";
 	getline(csvFile,line);
 	vector<string> colNames;
+	vector<int> colPos;
 	char* tok;
 	for(tok=strtok(str2arr(line),","); tok; tok=strtok(NULL,","))
-		colNames.push_back(tok);
+		for(int i=0; i<columns.size(); i++)
+			if(strcmp((columns[i]).c_str(),tok) == 0)
+			{
+				colNames.push_back(tok);
+				colPos.push_back(i);
+			}
 	delete tok;
+
 	for(int i = 0; i < colNames.size(); i++)
 		cout << colNames[i] << "\n";
 	return 0;
