@@ -1,6 +1,6 @@
 CSVReader : CSVReader.o
-	g++ CSVReader.o -o CSVReader
+	gcc CSVReader.o -o CSVReader
 CSVReader.o : CSVReader.cc
-	g++ -c CSVReader.cc
+	gcc -c CSVReader.cc
 clean :
 	rm *.o
